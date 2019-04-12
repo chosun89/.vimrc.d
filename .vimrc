@@ -6,7 +6,7 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 
-set foldmethod=syntax
+set foldmethod=manual
 set foldlevelstart=99
 
 set number relativenumber
