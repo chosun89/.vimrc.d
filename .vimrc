@@ -1,24 +1,39 @@
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+filetype plugin indent on
+syntax on
+
+set noswapfile
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
 set backspace=indent,eol,start
+set ignorecase
+set encoding=utf-8
+set laststatus=2
 
 set foldmethod=manual
 set foldlevelstart=99
+
+" remember folds after closing files
+augroup remember_folds
+   autocmd!
+   autocmd BufWinLeave * mkview
+   autocmd BufWinEnter * silent! loadview
+augroup END
 
 set number relativenumber
 set ttimeoutlen=100
 set cursorline
 set cursorcolumn
+set linebreak
+set foldcolumn=1
 
 inoremap {<CR> {<CR>}<Esc>O
 set pastetoggle=<F2>
 nnoremap <leader>1 :0r ~/.vim/snippets/temp1.cpp<CR>
 nnoremap <leader>2 :0r ~/.vim/snippets/temp2.cpp<CR>
-
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
