@@ -2,9 +2,9 @@ filetype plugin indent on
 syntax on
 
 set noswapfile
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
@@ -46,6 +46,8 @@ map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result
 " hotkey for save, compile, and run Python3 .py
 map <F7> <Esc>:w<CR>:!clear<CR>:!pypy ./%<CR>
 
+" NERDTree Toggle
+nmap <leader>f :NERDTreeToggle %<CR>
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
