@@ -26,7 +26,7 @@ augroup END
 set number relativenumber
 set ttimeoutlen=100
 set cursorline
-hi CursorLine cterm=NONE ctermbg=grey ctermfg=NONE
+hi CursorLine cterm=bold ctermbg=0 ctermfg=NONE
 set cursorcolumn
 set linebreak
 set foldcolumn=1
