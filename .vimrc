@@ -26,6 +26,7 @@ augroup END
 set number relativenumber
 set ttimeoutlen=100
 set cursorline
+hi CursorLine cterm=NONE ctermbg=grey ctermfg=NONE
 set cursorcolumn
 set linebreak
 set foldcolumn=1
@@ -44,7 +45,7 @@ map <F5> <Esc>:w<CR>:!clear<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-un
 map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:wq<CR>
 
 " hotkey for save, compile, and run Python3 .py
-map <F7> <Esc>:w<CR>:!clear<CR>:!pypy ./%<CR>
+map <F7> <Esc>:w<CR>:!clear<CR>:!python3 ./%<CR>
 
 " NERDTree Toggle
 nmap <leader>f :NERDTreeToggle %<CR>
