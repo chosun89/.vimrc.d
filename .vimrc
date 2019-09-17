@@ -19,8 +19,8 @@ set foldlevelstart=99
 " remember folds after closing files
 augroup remember_folds
    autocmd!
-   autocmd BufWinLeave * mkview
-   autocmd BufWinEnter * silent! loadview
+   autocmd BufWinLeave *.* mkview
+   autocmd BufWinEnter *.* silent loadview
 augroup END
 
 set number relativenumber
@@ -34,7 +34,7 @@ set foldcolumn=1
 inoremap {<CR> {<CR>}<Esc>O
 set pastetoggle=<F2>
 nnoremap <leader>1 :0r ~/.vim/snippets/temp1.cpp<CR>
-nnoremap <leader>2 :0r ~/.vim/snippets/temp2.cpp<CR>
+nnoremap <leader>2 :0r ~/.vim/snippets/template.tex<CR>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
