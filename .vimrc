@@ -31,10 +31,13 @@ set cursorcolumn
 set linebreak
 set foldcolumn=1
 
+" allows mouse to scroll through page
+set mouse=a
+
 inoremap {<CR> {<CR>}<Esc>O
 set pastetoggle=<F2>
-nnoremap <leader>1 :0r ~/.vim/snippets/temp1.cpp<CR>
-nnoremap <leader>2 :0r ~/.vim/snippets/template.tex<CR>
+nnoremap <leader>1 :0r ~/.vim/snippets/temp.cpp<CR>
+nnoremap <leader>2 :0r ~/.vim/snippets/temp.tex<CR>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
@@ -52,46 +55,18 @@ nmap <leader>f :NERDTreeToggle %<CR>
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
-
+"
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
 
-" Default PDF viewer
-"let g:vimtex_view_method='zathura'
+"" Default PDF viewer
+let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_open_on_warning = 1
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" UltiSnips
-Plug 'sirver/ultisnips'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"" On-demand loading
+Plug 'scrooloose/nerdtree'
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
+"" Initialize plugin system
 call plug#end()
