@@ -50,6 +50,10 @@ map <C-t>j :tabl<cr>
 map <C-t>h :tabp<cr>
 map <C-t>l :tabn<cr>
 
+" cylce through buffers
+noremap <C-l> :bnext<CR>
+noremap <C-r> :bprevious<CR>
+
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
 " '%' token for current file name
