@@ -45,10 +45,10 @@ nnoremap <leader>1 :0r ~/.vim/snippets/temp.cpp<CR>
 nnoremap <leader>2 :0r ~/.vim/snippets/temp.tex<CR>
 
 " tab switching maps
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
+map <C-t><k> :tabr<cr>
+map <C-t><j> :tabl<cr>
+map <C-t><h> :tabp<cr>
+map <C-t><l> :tabn<cr>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
