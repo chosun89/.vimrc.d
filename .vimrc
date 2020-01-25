@@ -34,10 +34,21 @@ set foldcolumn=1
 " allows mouse to scroll through page
 set mouse=a
 
-inoremap {<CR> {<CR>}<Esc>O
+" allows copy and paste
 set pastetoggle=<F2>
+
+" curly brace autocomplete
+inoremap {<CR> {<CR>}<Esc>O
+
+" template pasting
 nnoremap <leader>1 :0r ~/.vim/snippets/temp.cpp<CR>
 nnoremap <leader>2 :0r ~/.vim/snippets/temp.tex<CR>
+
+" tab switching maps
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
