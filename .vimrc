@@ -45,15 +45,16 @@ nnoremap <leader>1 :0r ~/.vim/snippets/temp.cpp<CR>
 nnoremap <leader>2 :0r ~/.vim/snippets/temp.tex<CR>
 
 " tab switching maps
-map <C-t>k :tabr<cr>
-map <C-t>j :tabl<cr>
-map <C-t>h :tabp<cr>
-map <C-t>l :tabn<cr>
+nnoremap <C-t>k :tabr<cr>
+nnoremap <C-t>j :tabl<cr>
+nnoremap <C-t>h :tabp<cr>
+nnoremap <C-t>l :tabn<cr>
 
 " cylce through buffers
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-d> :bdelete<CR>
+nnoremap <C-b> :ls<CR>:b<Space>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
