@@ -51,8 +51,9 @@ map <C-t>h :tabp<cr>
 map <C-t>l :tabn<cr>
 
 " cylce through buffers
-noremap <C-l> :bnext<CR>
-noremap <C-h> :bprevious<CR>
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
+nnoremap <C-d> :bdelete<CR>
 
 " :r removes file extensions '.cpp'
 " '!' executes externally (outside of vim)
