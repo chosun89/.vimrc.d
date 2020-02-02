@@ -53,7 +53,6 @@ nnoremap <C-t>l :tabn<cr>
 " cylce through buffers
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
-nnoremap <C-d> :bdelete<CR>
 nnoremap <C-b> :ls<CR>:b<Space>
 
 " :r removes file extensions '.cpp'
