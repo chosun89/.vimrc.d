@@ -14,14 +14,11 @@ set encoding=utf-8
 set laststatus=2
 
 set foldmethod=manual
-set foldlevelstart=99
+set foldcolumn=1
 
 " remember folds after closing files
-augroup remember_folds
-   autocmd!
-   autocmd BufWinLeave *.* mkview
-   autocmd BufWinEnter *.* silent loadview
-augroup END
+ autocmd BufWinLeave *.* mkview!
+ autocmd BufWinEnter *.* silent loadview
 
 set number relativenumber
 set ttimeoutlen=100
@@ -29,7 +26,6 @@ set cursorline
 hi CursorLine cterm=bold ctermbg=0 ctermfg=NONE
 set cursorcolumn
 set linebreak
-set foldcolumn=1
 
 " allows mouse to scroll through page
 set mouse=a
@@ -69,7 +65,9 @@ map <F7> <Esc>:w<CR>:!clear<CR>:!python3 ./%<CR>
 " NERDTree Toggle
 nmap <leader>f :NERDTreeToggle %<CR>
 
-" vim-plug
+" vim-plug install:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 "
 Plug 'lervag/vimtex'
@@ -83,6 +81,8 @@ let g:tex_conceal='abdmg'
 
 "" On-demand loading
 Plug 'scrooloose/nerdtree'
+
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 "" Initialize plugin system
 call plug#end()
