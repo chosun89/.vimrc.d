@@ -33,13 +33,6 @@ set mouse=a
 " allows copy and paste
 set pastetoggle=<F2>
 
-" curly brace autocomplete
-inoremap {<CR> {<CR>}<Esc>O
-
-" template pasting
-nnoremap <leader>1 :0r ~/.vim/snippets/temp.cpp<CR>
-nnoremap <leader>2 :0r ~/.vim/snippets/temp.tex<CR>
-
 " tab switching maps
 nnoremap <C-t>k :tabr<cr>
 nnoremap <C-t>j :tabl<cr>
@@ -49,6 +42,8 @@ nnoremap <C-t>l :tabn<cr>
 " cylce through buffers
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
+
+" list buffers and jump to buffer number
 nnoremap <C-b> :ls<CR>:b<Space>
 
 " :r removes file extensions '.cpp'
@@ -59,30 +54,35 @@ map <F5> <Esc>:w<CR>:!clear<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-un
 " hotkey for save and compile (CodeForces)
 map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:wq<CR>
 
-" hotkey for save, compile, and run Python3 .py
-map <F7> <Esc>:w<CR>:!clear<CR>:!python3 ./%<CR>
-
 " NERDTree Toggle
 nmap <leader>f :NERDTreeToggle %<CR>
 
-" vim-plug install:
+" vim-plug install curl:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-"
+
+" Vimtex: LaTeX Plugin for Vim
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
-
 "" Default PDF viewer
-let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='general'
 let g:vimtex_quickfix_open_on_warning = 1
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"" On-demand loading
+"" NerdTree: File Manager Plugin
 Plug 'scrooloose/nerdtree'
 
+"" YouCompleteMe: Autocomplete Plugin
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
+
+"" UltiSnips: Snippet Insertion Plugin
+Plug 'SirVer/ultisnips'
+" Trigger configuration. Do not use <tab> YouCompleteMe.
+let g:UltiSnipsExpandTrigger='<c-j>'
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit='vertical'
 
 "" Initialize plugin system
 call plug#end()
