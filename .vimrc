@@ -84,5 +84,8 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit='vertical'
 
+" disable scratch preview from auto complete
+set completeopt-=preview
+
 "" Initialize plugin system
 call plug#end()
