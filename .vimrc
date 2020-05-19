@@ -17,21 +17,30 @@ set foldmethod=manual
 set foldcolumn=1
 
 " remember folds after closing files
- autocmd BufWinLeave *.* mkview!
- autocmd BufWinEnter *.* silent loadview
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
 
+" line numbers
 set number relativenumber
-set ttimeoutlen=100
-set cursorline
+
+" highlights the row
+set cursorline 
+
+" configure highlight colors
 hi CursorLine cterm=bold ctermbg=0 ctermfg=NONE
-set cursorcolumn
+
+" highlights the column
+set cursorcolumn 
 set linebreak
 
-" allows mouse to scroll through page
+" allows mouse usage in vim
 set mouse=a
 
 " allows copy and paste
 set pastetoggle=<F2>
+
+" keystroke sequence delay for maps
+set ttimeoutlen=100 
 
 " tab switching maps
 nnoremap <C-t>k :tabr<cr>
@@ -51,41 +60,45 @@ nnoremap <C-b> :ls<CR>:b<Space>
 " '%' token for current file name
 " hotkey for save, clear terminal, compile and run
 map <F5> <Esc>:w<CR>:!clear<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:!./%:r<CR>
-" hotkey for save and compile (CodeForces)
-map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:wq<CR>
+
+" hotkey for save, compile and exit vim (CodeForces)
+map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:x<CR>
 
 " NERDTree Toggle
 nmap <leader>f :NERDTreeToggle %<CR>
 
-" vim-plug install curl:
+" vim-plug install command via curl:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 call plug#begin('~/.vim/plugged')
 
 " Vimtex: LaTeX Plugin for Vim
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
-"" Default PDF viewer
+
+" Default PDF viewer
 let g:vimtex_view_method='general'
 let g:vimtex_quickfix_open_on_warning = 1
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"" NerdTree: File Manager Plugin
+" NerdTree: File Manager Plugin
 Plug 'scrooloose/nerdtree'
 
-"" YouCompleteMe: Autocomplete Plugin
+" YouCompleteMe: Autocomplete Plugin
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
-"" UltiSnips: Snippet Insertion Plugin
+" UltiSnips: Snippet Insertion Plugin
 Plug 'SirVer/ultisnips'
+
 " Trigger configuration. Do not use <tab> YouCompleteMe.
 let g:UltiSnipsExpandTrigger='<c-j>'
+
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit='vertical'
 
 " disable scratch preview from auto complete
 set completeopt-=preview
 
-"" Initialize plugin system
 call plug#end()
