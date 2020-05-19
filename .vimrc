@@ -61,9 +61,6 @@ nnoremap <C-b> :ls<CR>:b<Space>
 " hotkey for save, clear terminal, compile and run
 map <F5> <Esc>:w<CR>:!clear<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:!./%:r<CR>
 
-" hotkey for save, compile and exit vim (CodeForces)
-" map <F6> <Esc>:w<CR>:!g++ -O2 -DLOCAL -Wall -Wno-sign-compare -Wno-unused-result -std=c++11 -static % -o %:r<CR>:x<CR>
-
 " NERDTree Toggle
 nmap <leader>f :NERDTreeToggle %<CR>
 
