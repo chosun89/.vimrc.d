@@ -20,6 +20,9 @@ set foldcolumn=1
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
 
+autocmd BufWinEnter *.cpp set textwidth=80 fo=tcq
+autocmd BufWinEnter *.tex set textwidth=80 fo=tcq
+
 " line numbers
 set number relativenumber
 
