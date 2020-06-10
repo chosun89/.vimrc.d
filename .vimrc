@@ -20,19 +20,20 @@ set foldcolumn=1
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
 
+" automatically wrap text at 80 lines for .cpp and .tex files
 autocmd BufWinEnter *.cpp set textwidth=80 fo=tcq
 autocmd BufWinEnter *.tex set textwidth=80 fo=tcq
 
-" line numbers
+" relative line numbers
 set number relativenumber
 
-" highlights the row
+" highlights the row cursor
 set cursorline 
 
 " configure highlight colors
 hi CursorLine cterm=bold ctermbg=0 ctermfg=NONE
 
-" highlights the column
+" highlights the column cursor
 set cursorcolumn 
 set linebreak
 
@@ -102,7 +103,7 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit='vertical'
 
-" disable scratch preview from auto complete
+" disable split window preview from auto complete
 set completeopt-=preview
 
 call plug#end()
