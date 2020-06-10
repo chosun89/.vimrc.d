@@ -45,6 +45,10 @@ set pastetoggle=<F2>
 " keystroke sequence delay for maps
 set ttimeoutlen=100 
 
+" swap 0 and ^ (0 = move to column 0, ^ = move to first char of line)
+nnoremap 0 ^
+nnoremap ^ 0
+
 " tab switching maps
 nnoremap <C-t>k :tabr<cr>
 nnoremap <C-t>j :tabl<cr>
